@@ -70,14 +70,15 @@ public abstract class AbstractElement implements Element {
     }
 
     public GamePage getRandomGame(){
-        List<WebElement> webElementList = new ArrayList<>();
+        List<WebElement> webElementList = Browser.getDriver().findElements(By.id("TopSellersRows"));
         //  webElementList.add(releasedGame.getAttribute("data-ds-appid"));
-        webElementList.addAll(getWebElement().findElements(this.locator));
+      //  webElementList.addAll(getWebElement().findElements(By.id("TopSellersRows")));
         /*List<String> idList = new ArrayList<>();
         for(int i= 0; i < webElementList.size(); i++){
             idList.add(webElementList.get(i).getAttribute("data-ds-appid"));
         }*/
        //  idList.get((int) (Math.random()+webElementList.size()));
+        System.out.println(webElementList.size());
         webElementList.get((int) (Math.random() * (webElementList.size()-1))).click();
         return new GamePage();
     }

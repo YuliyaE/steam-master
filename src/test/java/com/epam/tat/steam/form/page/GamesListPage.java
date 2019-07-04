@@ -57,27 +57,11 @@ public class GamesListPage extends BasePage {
     private Button releasedGame;
 
 
-    /*public void chooseGame() {
-        newReleasesRow.click();
-        releasedGame.getRandomGame();
-
-    }*/
-
-
-
-   public Game chooseGame() {
+    public GamePage chooseGame() {
         topSellers.click();
         //  new MenuLabel(topSellersRowsListRandom).chooseRandomGame(topSellersRowsList); //Random implementation, please check
-
-       topSellersRows.click();
-        return getExpectedGame();
-    }
-
-    public CartPage addToCart() {
-      topSellersRowsGame.click();
-        // viewPage.click(); // if 18+ appears, use this line
-        addToCart.click();
-        return new CartPage();
+        topSellersRows.getRandomGame();
+        return new GamePage();
     }
 
     private Game getExpectedGame() {
